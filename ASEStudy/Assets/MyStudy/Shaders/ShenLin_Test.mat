@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShenLin_Test
-  m_Shader: {fileID: 4800000, guid: e3677177257a9914493f5b0e75fc5cf8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 741dda8835040824ea4e5975558f43a4, type: 3}
   m_ShaderKeywords: _MASKCHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _CustomUV:
-        m_Texture: {fileID: 2800000, guid: b23676ff9cac20a4c9c7b9333f055f1b, type: 3}
+        m_Texture: {fileID: 2800000, guid: e11ad8b17cf78bd44b47add06136ab4f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -31,6 +31,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: e28dc97a9541e3642a48c0e3886688c5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 3.25, y: 0}
     - _RemapTex:
         m_Texture: {fileID: 2800000, guid: ec90c1a1425e980489efcaaaa2815cb8, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -47,8 +51,9 @@ Material:
     - _Rotation: 0.1
     - _V: 0.795
     - _speed: 1
+    - _strength: 0.1
     - _xSpeed: 0
     - _ySpeed: 0
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ScaleAndOffset: {r: 1.67, g: 1.34, b: 5.95, a: 2.93}
+    - _ScaleAndOffset: {r: 1, g: 1, b: 1.15, a: 0}
