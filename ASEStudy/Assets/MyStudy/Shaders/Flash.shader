@@ -6,6 +6,7 @@ Shader "ShenLin/Flash"
 	{
 		[HDR]_MainColor("MainColor", Color) = (1,1,1,1)
 		_MainTex("MainTex", 2D) = "white" {}
+		_speed("speed", Float) = 1
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 	}
 	
@@ -39,7 +40,8 @@ Shader "ShenLin/Flash"
 			#pragma vertex vert
 			#pragma fragment frag
 			#include "UnityCG.cginc"
-			
+			#include "UnityShaderVariables.cginc"
+
 
 			struct appdata
 			{
@@ -61,6 +63,7 @@ Shader "ShenLin/Flash"
 			uniform half4 _MainColor;
 			uniform sampler2D _MainTex;
 			uniform float4 _MainTex_ST;
+			uniform half _speed;
 			
 			v2f vert ( appdata v )
 			{
@@ -69,11 +72,16 @@ Shader "ShenLin/Flash"
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 
+				float mulTime7 = _Time.y * _speed;
+				float temp_output_1_0_g3 = abs( (frac( mulTime7 )*2.0 + -1.0) );
+				float vertexToFrag12 = ( temp_output_1_0_g3 * temp_output_1_0_g3 * ( 3.0 - ( temp_output_1_0_g3 * 2.0 ) ) );
+				o.ase_texcoord.z = vertexToFrag12;
+				
 				o.ase_texcoord.xy = v.ase_texcoord.xy;
 				o.ase_color = v.color;
 				
 				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord.zw = 0;
+				o.ase_texcoord.w = 0;
 				float3 vertexValue =  float3(0,0,0) ;
 
 				v.vertex.xyz += vertexValue;
@@ -88,9 +96,12 @@ Shader "ShenLin/Flash"
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 				fixed4 finalColor;
 				float2 uv_MainTex = i.ase_texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+				float4 tex2DNode2 = tex2D( _MainTex, uv_MainTex );
+				float vertexToFrag12 = i.ase_texcoord.z;
+				float4 appendResult10 = (float4(( _MainColor * tex2DNode2 * i.ase_color ).rgb , ( _MainColor.a * tex2DNode2.a * i.ase_color.a * vertexToFrag12 )));
 				
 				
-				finalColor = ( _MainColor * tex2D( _MainTex, uv_MainTex ) * i.ase_color );
+				finalColor = appendResult10;
 				return finalColor;
 			}
 			ENDCG
@@ -102,15 +113,37 @@ Shader "ShenLin/Flash"
 }
 /*ASEBEGIN
 Version=16800
-707;301;1195;632;679.4096;248.5231;1.3;True;False
-Node;AmplifyShaderEditor.SamplerNode;2;-65,81;Float;True;Property;_MainTex;MainTex;1;0;Create;True;0;0;False;0;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;3;-9,-96;Half;False;Property;_MainColor;MainColor;0;1;[HDR];Create;True;0;0;False;0;1,1,1,1;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.VertexColorNode;4;54.95589,287.6129;Float;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.SimpleMultiplyOpNode;1;261,63;Float;False;3;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;447,63;Half;False;True;2;Half;ASEMaterialInspector;0;1;ShenLin/Flash;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;True;False;True;0;False;-1;True;True;True;True;True;0;False;-1;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;2;False;-1;True;3;False;-1;True;False;0;False;-1;0;False;-1;True;2;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;True;2;0;False;False;False;False;False;False;False;False;False;True;0;False;0;;0;0;Standard;0;0;1;True;False;2;0;FLOAT4;0,0,0,0;False;1;FLOAT3;0,0,0;False;0
+207;167;1407;768;3179.162;542.5059;2.791781;True;False
+Node;AmplifyShaderEditor.CommentaryNode;24;-1530.049,527.9763;Float;False;1752.241;298.0007;闪 烁;7;7;13;22;19;18;16;12;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.RangedFloatNode;13;-1480.049,577.9763;Half;False;Property;_speed;speed;2;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleTimeNode;7;-1285.608,583.377;Float;False;1;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.FractNode;16;-1071.005,583.2048;Float;True;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.ScaleAndOffsetNode;18;-850.0047,584.5048;Float;True;3;0;FLOAT;0;False;1;FLOAT;2;False;2;FLOAT;-1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.AbsOpNode;19;-581.4044,588.1047;Float;True;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.FunctionNode;22;-371.0819,589.4962;Float;True;Smooth;-1;;3;925377fd32ce4cf4693aaf8b2c0e8af1;0;1;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SamplerNode;2;-220.2001,34.60002;Float;True;Property;_MainTex;MainTex;1;0;Create;True;0;0;False;0;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;3;-164.2001,-142.4;Half;False;Property;_MainColor;MainColor;0;1;[HDR];Create;True;0;0;False;0;1,1,1,1;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.VertexColorNode;4;-100.2441,241.2128;Float;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.VertexToFragmentNode;12;-60.37192,589.6111;Float;False;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;11;247.2942,260.0091;Float;False;4;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;1;182.6,16.6;Float;False;3;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;COLOR;0,0,0,0;False;1;COLOR;0
+Node;AmplifyShaderEditor.DynamicAppendNode;10;419.1902,18.37704;Float;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;654.7,14.30002;Half;False;True;2;Half;ASEMaterialInspector;0;1;ShenLin/Flash;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;True;False;True;0;False;-1;True;True;True;True;True;0;False;-1;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;2;False;-1;True;3;False;-1;True;False;0;False;-1;0;False;-1;True;2;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;True;2;0;False;False;False;False;False;False;False;False;False;True;0;False;0;;0;0;Standard;0;0;1;True;False;2;0;FLOAT4;0,0,0,0;False;1;FLOAT3;0,0,0;False;0
+WireConnection;7;0;13;0
+WireConnection;16;0;7;0
+WireConnection;18;0;16;0
+WireConnection;19;0;18;0
+WireConnection;22;1;19;0
+WireConnection;12;0;22;0
+WireConnection;11;0;3;4
+WireConnection;11;1;2;4
+WireConnection;11;2;4;4
+WireConnection;11;3;12;0
 WireConnection;1;0;3;0
 WireConnection;1;1;2;0
 WireConnection;1;2;4;0
-WireConnection;0;0;1;0
+WireConnection;10;0;1;0
+WireConnection;10;3;11;0
+WireConnection;0;0;10;0
 ASEEND*/
-//CHKSM=0328323035D83F3645F838195303B18085989596
+//CHKSM=55D7CC27A89CCF3F53A3AE77DBC77617656365AE
