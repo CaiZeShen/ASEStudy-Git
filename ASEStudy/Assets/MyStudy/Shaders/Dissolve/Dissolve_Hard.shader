@@ -1,6 +1,6 @@
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "ShenLin/HardDissolve"
+Shader "ShenLin/Dissolve/Hard"
 {
 	Properties
 	{
@@ -116,7 +116,7 @@ Shader "ShenLin/HardDissolve"
 }
 /*ASEBEGIN
 Version=16800
-262;242;1463;666;1842.6;-344.9729;1.164779;True;False
+230;246;1463;690;1842.6;-337.9842;1.164779;True;False
 Node;AmplifyShaderEditor.RangedFloatNode;7;-1221.161,882.7328;Float;False;Property;_Dissolve;Dissolve;3;0;Create;True;0;0;False;0;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;12;-1220.18,983.3968;Half;False;Property;_Input;Input;4;1;[Enum];Create;True;2;Matiral;1;Partical;0;0;False;0;0;1;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;10;-1208.348,706.4029;Float;False;0;-1;3;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
@@ -130,7 +130,7 @@ Node;AmplifyShaderEditor.SamplerNode;2;-89.70005,79.7;Float;True;Property;_MainT
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;1;261,63;Float;False;3;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;8;283.5029,409.8979;Float;False;4;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.DynamicAppendNode;9;458.957,66.10416;Float;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;639.4001,66.90001;Half;False;True;2;Half;ASEMaterialInspector;0;1;ShenLin/HardDissolve;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;True;False;True;0;False;-1;True;True;True;True;True;0;False;-1;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;2;False;-1;True;3;False;-1;True;False;0;False;-1;0;False;-1;True;2;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;True;2;0;False;False;False;False;False;False;False;False;False;True;0;False;0;;0;0;Standard;0;0;1;True;False;2;0;FLOAT4;0,0,0,0;False;1;FLOAT3;0,0,0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;639.4001,66.90001;Half;False;True;2;Half;ASEMaterialInspector;0;1;ShenLin/Dissolve/Hard;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;True;False;True;0;False;-1;True;True;True;True;True;0;False;-1;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;2;False;-1;True;3;False;-1;True;False;0;False;-1;0;False;-1;True;2;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;True;2;0;False;False;False;False;False;False;False;False;False;True;0;False;0;;0;0;Standard;0;0;1;True;False;2;0;FLOAT4;0,0,0,0;False;1;FLOAT3;0,0,0;False;0
 WireConnection;11;0;10;3
 WireConnection;11;1;7;0
 WireConnection;11;2;12;0
@@ -148,4 +148,4 @@ WireConnection;9;0;1;0
 WireConnection;9;3;8;0
 WireConnection;0;0;9;0
 ASEEND*/
-//CHKSM=24A6E6F73A6E678F27F1CC1C6543DA52D3E7BA22
+//CHKSM=F8D56881E16F7C9D2E030D9FCB2B0281167169BC
