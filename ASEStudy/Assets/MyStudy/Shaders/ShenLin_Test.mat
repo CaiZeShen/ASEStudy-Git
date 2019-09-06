@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShenLin_Test
-  m_Shader: {fileID: 4800000, guid: 8df28c7eeb00ad642968f6722c1d00d4, type: 3}
+  m_Shader: {fileID: 4800000, guid: 18db98720372d964299990e7821b3898, type: 3}
   m_ShaderKeywords: _MASKCHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -43,6 +43,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: ec90c1a1425e980489efcaaaa2815cb8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _UVTex:
+        m_Texture: {fileID: 2800000, guid: f53d659cfc148aa48a70d753b405e639, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -50,13 +54,15 @@ Material:
     m_Floats:
     - _CullMode: 0
     - _Dissolve: 0
-    - _Dissovle: 0.299
-    - _DissovleMode: 0
+    - _Dissovle: 0
+    - _DissovleMode: 1
+    - _Disturbance: 0
     - _Exp: 3.45
     - _Float0: 0.6792268
     - _Hardness: 0.268
     - _Input: 1
     - _MaskChannel: 3
+    - _NoiseSale: 0
     - _OutlineWidth: 0.08
     - _PannerInput: 0
     - _Rotation: 0.1
