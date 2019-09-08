@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShenLin_Test
+  m_Name: ShenLin_Dissolve_Board
   m_Shader: {fileID: 4800000, guid: 64863cbeb9f43b54ab83f53d33d0c187, type: 3}
   m_ShaderKeywords: _MASKCHANNEL_A
   m_LightmapFlags: 4
