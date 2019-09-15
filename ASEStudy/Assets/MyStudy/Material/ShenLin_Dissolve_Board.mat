@@ -87,7 +87,7 @@ Material:
     - _Input: 1
     - _MaskChannel: 3
     - _NoiseSale: 0
-    - _OutlineWidth: 0.08
+    - _OutlineWidth: 0.05
     - _PannerInput: 0
     - _Rotation: 0.1
     - _Till: 15
@@ -98,6 +98,7 @@ Material:
     - _ySpeed: 0
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutLineColor: {r: 0, g: 1.427451, b: 4, a: 1}
     - _Outline: {r: 0.99215686, g: 0.020484228, b: 0, a: 1}
     - _RampColor: {r: 1, g: 0.5330188, b: 0.5330188, a: 1}
     - _ScaleAndOffset: {r: 1, g: 1, b: 1.15, a: 0}
