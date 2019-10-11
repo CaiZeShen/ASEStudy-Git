@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9de35699fb5494478bb9daa2f4eec76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PostProcessMat: {fileID: 2100000, guid: 4dd4de5d075aed9458304abf0ae3ef44, type: 2}
+  PostProcessMat: {fileID: 2100000, guid: 73ad09042b6dea346a62f5ebc8dd8fa4, type: 2}
 --- !u!1001 &1317680097
 PrefabInstance:
   m_ObjectHideFlags: 0

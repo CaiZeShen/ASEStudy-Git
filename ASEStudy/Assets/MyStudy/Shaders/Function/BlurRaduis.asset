@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: BlurRaduis
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity Asset
+    Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=16800\n494;251;1466;837;733;417;1;True;False\nNode;AmplifyShaderEditor.CustomExpressionNode;1;207,-89;Float;False;float2
+    dir = UV - Center@$for(int i =0 @i < Count@ i++){$UV = UV - dir * BlurFac * i@$FinColor
+    += tex2D(MainTex,UV)@$}$FinColor /= Count@;7;False;6;True;UV;FLOAT2;0,0;In;;Float;False;False;FinColor;FLOAT3;0,0,0;Out;;Float;False;False;Count;INT;0;In;;Half;False;False;MainTex;SAMPLER2D;;In;;Float;False;False;Center;FLOAT2;0,0;In;;Float;False;False;BlurFac;FLOAT;0;In;;Float;False;My
+    Custom Expression;True;False;0;7;0;FLOAT;0;False;1;FLOAT2;0,0;False;2;FLOAT3;0,0,0;False;3;INT;0;False;4;SAMPLER2D;;False;5;FLOAT2;0,0;False;6;FLOAT;0;False;2;FLOAT;0;FLOAT3;3\nNode;AmplifyShaderEditor.FunctionInput;2;-190,-100;Float;False;UV;2;0;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput;3;-180,-18;Float;False;Count;0;1;False;1;0;INT;0;False;1;INT;0\nNode;AmplifyShaderEditor.FunctionInput;4;-207,64;Float;False;MainTex;9;2;False;1;0;SAMPLER2D;0;False;1;SAMPLER2D;0\nNode;AmplifyShaderEditor.FunctionInput;5;-184,139;Float;False;Center;2;3;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput;6;-175,228;Float;False;BlurFac;1;4;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;521,-67;Float;False;True;Output;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nWireConnection;1;1;2;0\nWireConnection;1;3;3;0\nWireConnection;1;4;4;0\nWireConnection;1;5;5;0\nWireConnection;1;6;6;0\nWireConnection;0;0;1;3\nASEEND*/\n//CHKSM=0C425CC2B1534E7536DC03D5236CE702F7FEC611"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
