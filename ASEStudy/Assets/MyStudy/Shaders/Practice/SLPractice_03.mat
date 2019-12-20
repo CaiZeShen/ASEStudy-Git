@@ -19,16 +19,40 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Dir:
+        m_Texture: {fileID: 2800000, guid: 795c41ad0bf1e6b4a8880cfe2c867e77, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 80ab37a9e4f49c842903bb43bdd7bcd2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 92fdfeae3b21ac143a04fe28b56f63ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
-        m_Texture: {fileID: 2800000, guid: fbeb42861f0d12f41b68cee79f714ea7, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 578b1172d4dd51e4198158d4cddcd559, type: 3}
+        m_Scale: {x: 2, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RemapTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Shade:
+        m_Texture: {fileID: 2800000, guid: 58a9a064bf67e76449bda98bda46c06f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 19fa4622a341fe34bbdfc5382579f7d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 2800000, guid: ed8a081522edb4c4ba65d05697702ee5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _flowmap:
+        m_Texture: {fileID: 2800000, guid: f53d659cfc148aa48a70d753b405e639, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ramp:
+        m_Texture: {fileID: 2800000, guid: 81799091b95992643ad1e937aa5d38d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -36,10 +60,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Float0: -1
+    - _Dissovle: 0.43
+    - _Float0: 0
+    - _Float1: 0.26848406
     - _Pow: 1
     - _Rotate: 0.58
+    - _Till: 20
     - _V: 0
+    - _dissovle: 0.58
+    - _hard: 0.722
+    - _width: 0.484
     m_Colors:
+    - _Color0: {r: 1, g: 0.5292475, b: 0.2039216, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _TillAndOffset: {r: 1, g: 1, b: 0, a: -0.42}
+    - _Vector0: {r: -0.35, g: -0.83, b: -0.35, a: -0.18}

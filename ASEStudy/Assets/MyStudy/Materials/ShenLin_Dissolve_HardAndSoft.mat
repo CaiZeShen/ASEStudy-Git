@@ -34,7 +34,7 @@ Material:
     m_Floats:
     - _Dissolve: 0.448
     - _DissovleMode: 0
-    - _Hardness: 0.756
+    - _Hardness: 0.5579312
     - _OutlineWidth: 0.118
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
